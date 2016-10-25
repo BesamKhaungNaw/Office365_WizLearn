@@ -1,0 +1,63 @@
+﻿@model WizlearnLMS_O365.Models.File.DriveItemList
+
+@{ ViewBag.Title = "My Files"; }
+
+<h2>My Files</h2>
+
+<div class="row" style="margin-top:50px;">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <div>@Html.ActionLink("ViewUploadFile", "ViewUploadFile",new {driveItem =Model.parentDriveId})</div>
+            <table id="filesTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Created</th>
+                        <th>Modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var file in Model.DriveItems)
+                    {
+                        <tr>
+
+                            <td></td>
+                            <td>
+                                @if (@file.Folder != null)
+                                {
+
+                                    @Html.ActionLink("Folder", "ViewDetails", new { id = @file.Id})
+                                }
+                                @if (@file.Folder == null)
+                                {
+                                    <a href="@file.WebUrl">File</a>
+                                }
+
+                            </td>
+
+                            <td>@file.Name </td>
+
+                            <td>
+                                @file.CreatedDateTime.Value.UtcDateTime.ToLocalTime()
+                            </td>
+                            <td>
+                                @file.LastModifiedDateTime.Value.UtcDateTime.ToLocalTime()
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>.
+        <div class="btn btn-group-sm">
+            @{
+                //Place Paging controls here
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
