@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="formoid_files/formoid1/style.css" type="text/css" />
+<script type="text/javascript" src="formoid_files/formoid1/jquery.uniform.min.js"></script> <---------------------------------------------- link to js file should be placed after css link
+</head>
+<body>
+<!-- Start Formoid form-->
+<form action="" name="contactUser" class="myForm1" title="Contact Registered Users">
+    <legend>Send Email to Registered Users</legend>
+    <label class="title">Registered User ID #</label>
+    <input type="text" name="userID" size="2">
+    <br />
+    <label class="title">Select ALL Registered Users</label>
+    <input type="checkbox" name="selectALL" value=""> 
+    <br />
+	<input type="radio" name="gender" value="male" checked> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	<input type="radio" name="gender" value="other"> Other
+    <label class="title">Message</label>
+    <br />
+    <textarea name="message" cols="20" rows="5"></textarea>
+    <br />
+    <input type="button" name="reset" value="Reset Form">  <input type="submit" name="submit" value="Submit"> <--- input type when defined as "button" should have options of submit                                                                                                                                                                                                                                        or reset
+</form>
+<p class="frmd"><a href="http://formoid.com/">PHP CONTACT FORM HTML Formoid.com 1.1</a></p>
+<!-- Stop Formoid form-->
+</body>
+</html>
